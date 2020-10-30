@@ -1,0 +1,15 @@
+---
+name: 'DevelopmentAdmin-CacheMonitor'
+after:
+  - 'DevelopmentAdmin'
+---
+SilverStripe\Dev\DevelopmentAdmin:
+  registered_controllers:
+    cache-monitor:
+      controller: 'DNSL48\SilverstripeCMS\CacheMonitor\Dev\Controller'
+      links:
+        cache-monitor: 'Cache backend stats'
+
+SilverStripe\Control\Director:
+  rules:
+    'dev/cache-monitor/$Action': 'DNSL48\SilverstripeCMS\CacheMonitor\Dev\Controller'
